@@ -56,15 +56,17 @@ classifier.add(Dense(output_dim = 40, init='uniform', activation='relu'))
 classifier.add(Dense(output_dim = 3, init='uniform', activation='sigmoid'))
 
 #compiling the ANN
-classifier.compile(optimizer = "adam", loss= 'categorical_crossentropy', metrics= ['accuracy'])
+classifier.compile(optimizer = "adam", loss= 'binary_crossentropy', metrics= ['accuracy'])
 
 # Fitting classif. 1ier to the Training set
-classifier.fit(X_train, y_train, batch_size = 10, nb_epoch=100)
+classifier.fit(X_train, y_train, batch_size = 100, nb_epoch=100)
 
 score = classifier.evaluate(X_test, y_test, batch_size=128)
 
 y_pred = classifier.predict(X_test)
 y_pred = (y_pred > 0.5)
+
+
 
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
