@@ -35,6 +35,8 @@ for i in x:
 labelencoder_X = LabelEncoder()
 X = labelencoder_X.fit_transform(X)
 
+X = np.asarray(X)
+X = X.reshape(-1,1)
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.40, random_state = 0)
