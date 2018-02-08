@@ -17,7 +17,6 @@ from sklearn.preprocessing import LabelEncoder
 dataset = pd.read_csv('/home/amansawhney/Development/language-classifier/lang_data.csv')
 x = dataset.iloc[:, 0].values
 y = dataset.iloc[:, 1].values
-print(y[52])
 labelencoder_Y = LabelEncoder()
 Y = labelencoder_Y.fit_transform(y)
 
@@ -33,12 +32,15 @@ for i in x:
         j += 1
         X.append(list(i))
 
-        
-
-    
-
-
+labelencoder_X = LabelEncoder()
+X = labelencoder_X.fit_transform(X)
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.40, random_state = 0)
+
+# Feature Scaling
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
