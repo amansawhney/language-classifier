@@ -19,7 +19,7 @@ from keras.utils import to_categorical
 
 # Importing the dataset
 dataset = pd.read_csv('/home/amansawhney/Development/language-classifier/lang_data.csv')
-dataset = dataset.sample(10000).fillna(value = " ")
+dataset = dataset.fillna(value = " ")
 x = dataset.iloc[:, 2:]
 X = x.apply(LabelEncoder().fit_transform).values
 
@@ -30,7 +30,7 @@ Y = to_categorical(Y)
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size = 0.40, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size = 0.20, random_state = 0)
 
 # Feature Scaling
 from sklearn.preprocessing import StandardScaler 
@@ -53,16 +53,21 @@ classifier.add(Dense(output_dim = 40, init='uniform', activation='relu'))
 
 
 #add output layer
-classifier.add(Dense(output_dim = 5, init='uniform', activation='sigmoid'))
+classifier.add(Dense(output_dim = 3, init='uniform', activation='sigmoid'))
 
 #compiling the ANN
 classifier.compile(optimizer = "adam", loss= 'categorical_crossentropy', metrics= ['accuracy'])
 
 # Fitting classif. 1ier to the Training set
-classifier.fit(X_train, y_train, batch_size = 1, nb_epoch=100)
+classifier.fit(X_train, y_train, batch_size = 10, nb_epoch=100)
 
 score = classifier.evaluate(X_test, y_test, batch_size=128)
 
+y_pred = classifier.predict(X_test)
+y_pred = (y_pred > 0.5)
+
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
 
 
 
