@@ -20,6 +20,6 @@ csv.write(columnTitleRow)
 for key in output_dict.keys():
 	lang = key
 	word = output_dict[key]
-	row = lang + "," + word + "\n"
+	row = word + "," + " ".join(str(x) for x in list(lang)).replace(" ", ",") + "\n"
 	csv.write(row)
 
