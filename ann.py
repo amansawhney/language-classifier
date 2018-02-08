@@ -13,18 +13,20 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from keras.utils import np_utils
+from keras.utils import to_categorical
+
 
 
 # Importing the dataset
 dataset = pd.read_csv('/home/amansawhney/Development/language-classifier/lang_data.csv')
-dataset = dataset.sample(10000).fillna(value = 0)
-x = dataset.iloc[:, 2:].values
-labelencoder_X = LabelEncoder()
-X = labelencoder_X.fit_transform(x)
+dataset = dataset.sample(10000).fillna(value = " ")
+x = dataset.iloc[:, 2:]
+X = x.apply(LabelEncoder().fit_transform).values
 
 y = dataset.iloc[:, 1].values
 labelencoder_Y = LabelEncoder()
 Y = labelencoder_Y.fit_transform(y)
+Y = to_categorical(Y)
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
@@ -46,18 +48,18 @@ from keras.optimizers import SGD
 classifier = Sequential()
 
 #add the input layers and the first hidden layer
-classifier.add(Dense(output_dim = 3, init='uniform', activation='relu', input_dim= 1))
-classifier.add(Dense(output_dim = 3, init='uniform', activation='relu'))
+classifier.add(Dense(output_dim = 25, init='uniform', activation='relu', input_dim= 51))
+classifier.add(Dense(output_dim = 25, init='uniform', activation='relu'))
 
 
 #add output layer
-classifier.add(Dense(output_dim = 1, init='uniform', activation='sigmoid'))
+classifier.add(Dense(output_dim = 5, init='uniform', activation='sigmoid'))
 
 #compiling the ANN
-classifier.compile(optimizer = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True), loss= 'categorical_crossentropy', metrics= ['accuracy'])
+classifier.compile(optimizer = "adam", loss= 'categorical_crossentropy', metrics= ['accuracy'])
 
 # Fitting classif. 1ier to the Training set
-classifier.fit(X_train, y_train, batch_size = 1000, nb_epoch=15)
+classifier.fit(X_train, y_train, batch_size = 5, nb_epoch=100)
 
 score = classifier.evaluate(X_test, y_test, batch_size=128)
 
