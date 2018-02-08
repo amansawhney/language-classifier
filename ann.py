@@ -16,11 +16,13 @@ from keras.utils import np_utils
 
 
 # Importing the dataset
-dataset = pd.read_csv('/home/amansawhney/Development/language-classifier/lang_data.csv',  error_bad_lines=False)
-x = dataset.iloc[:, [1, 26]].values
+dataset = pd.read_csv('/home/amansawhney/Development/language-classifier/lang_data.csv')
+dataset = dataset.sample(10000).fillna(value = 0)
+x = dataset.iloc[:, 2:].values
 labelencoder_X = LabelEncoder()
 X = labelencoder_X.fit_transform(x)
-y = dataset.iloc[:, 0].values
+
+y = dataset.iloc[:, 1].values
 labelencoder_Y = LabelEncoder()
 Y = labelencoder_Y.fit_transform(y)
 
