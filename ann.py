@@ -48,8 +48,8 @@ from keras.optimizers import SGD
 classifier = Sequential()
 
 #add the input layers and the first hidden layer
-classifier.add(Dense(output_dim = 25, init='uniform', activation='relu', input_dim= 51))
-classifier.add(Dense(output_dim = 25, init='uniform', activation='relu'))
+classifier.add(Dense(output_dim = 40, init='uniform', activation='relu', input_dim= 51))
+classifier.add(Dense(output_dim = 40, init='uniform', activation='relu'))
 
 
 #add output layer
@@ -59,7 +59,7 @@ classifier.add(Dense(output_dim = 5, init='uniform', activation='sigmoid'))
 classifier.compile(optimizer = "adam", loss= 'categorical_crossentropy', metrics= ['accuracy'])
 
 # Fitting classif. 1ier to the Training set
-classifier.fit(X_train, y_train, batch_size = 5, nb_epoch=100)
+classifier.fit(X_train, y_train, batch_size = 1, nb_epoch=100)
 
 score = classifier.evaluate(X_test, y_test, batch_size=128)
 
