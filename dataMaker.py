@@ -16,10 +16,14 @@ csv = open(download_dir, "w")
 
 columnTitleRow = "lang, word\n"
 csv.write(columnTitleRow)
-
+limit = 10000
+index = 0
 for key in output_dict.keys():
-	lang = key
-	word = output_dict[key]
-	row = word + "," + " ".join(str(x) for x in list(lang)).replace(" ", ",") + "\n"
-	csv.write(row)
+    index += 1
+    lang = key
+    word = output_dict[key]
+    row = word + "," + " ".join(str(x) for x in list(lang)).replace(" ", ",") + "\n"
+    csv.write(row)
+    if index==limit:
+        break
 
