@@ -32,6 +32,5 @@ for key in output_dict.keys():
     row = word + "," + " ".join(str(x) for x in list(lang)).replace(" ", ",") + "\n"
     csv.write(row)
 df_subset = pd.read_csv('lang_data.csv')
-df_subset = df_subset.sample(100000)
 df_subset.to_csv('lang_data.csv', sep=',', encoding='utf-8')
 

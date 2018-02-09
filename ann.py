@@ -26,7 +26,7 @@ for i in X_p:
     row = []
     for j in i:
         if len(j) > 1:
-            print(j)
+            print(i)
         row.append(ord(str(j)))
     X.append(row)
 X = np.array(X)
@@ -85,8 +85,8 @@ def processSingleWordTests(word):
     return np.array(encoded_array)
 
         
-
-new_pred = classifier.predict(processSingleWordTests("esternocleidooccipitomastoideo"))
+word = processSingleWordTests("hønsehuset")
+new_pred = classifier.predict(word)
 new_pred = (new_pred > 0.5)
 
 
