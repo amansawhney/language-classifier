@@ -20,8 +20,15 @@ from keras.utils import to_categorical
 # Importing the dataset
 dataset = pd.read_csv('/home/amansawhney/Development/language-classifier/lang_data.csv')
 dataset = dataset.fillna(value = " ")
-x = dataset.iloc[:, 2:]
-X = x.apply(LabelEncoder().fit_transform).values
+X_p = dataset.iloc[:, 2:].values
+X = []
+for i in X_p:
+    row = []
+    for j in i:
+        row.append(ord(str(j)))
+    X.append(row)
+X = np.array(X)
+
 
 y = dataset.iloc[:, 1].values
 labelencoder_Y = LabelEncoder()
@@ -61,15 +68,27 @@ classifier.compile(optimizer = "adam", loss= 'binary_crossentropy', metrics= ['a
 # Fitting classif. 1ier to the Training set
 classifier.fit(X_train, y_train, batch_size = 100, nb_epoch=100)
 
-score = classifier.evaluate(X_test, y_test, batch_size=128)
+score = classifier.evaluate(X_test, y_test, batch_size=1)
 
 y_pred = classifier.predict(X_test)
 y_pred = (y_pred > 0.5)
 
+def processSingleWordTests(word):
+    word_array = list(word)
+    encoded_array = [[]]
+    for i in range(1, 52-len(word_array)):
+        word_array.append(" ")
+    for i in word_array:
+        encoded_array[0].append(ord(i))
+    return np.array(encoded_array)
+
+        
+
+new_pred = classifier.predict(processSingleWordTests("and"))
+new_pred = (new_pred > 0.5)
 
 
-from sklearn.metrics import confusion_matrix
-cm = confusion_matrix(y_test, y_pred)
+    
 
 
 
