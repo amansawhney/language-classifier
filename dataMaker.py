@@ -11,7 +11,7 @@ for fileName in fileNames:
     length = 0
     for line in f:
         length += 1
-        if length == 20000:
+        if length == 100000:
             break
         keys.append(line.replace("\n", ""))
         values.append(fileName.replace(".txt", ""))
@@ -32,6 +32,6 @@ for key in output_dict.keys():
     row = word + "," + " ".join(str(x) for x in list(lang)).replace(" ", ",") + "\n"
     csv.write(row)
 df_subset = pd.read_csv('lang_data.csv')
-df_subset = df_subset.sample(20000)
+df_subset = df_subset.sample(100000)
 df_subset.to_csv('lang_data.csv', sep=',', encoding='utf-8')
 

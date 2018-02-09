@@ -25,6 +25,8 @@ X = []
 for i in X_p:
     row = []
     for j in i:
+        if len(j) > 1:
+            print(j)
         row.append(ord(str(j)))
     X.append(row)
 X = np.array(X)
@@ -60,7 +62,7 @@ classifier.add(Dense(output_dim = 40, init='uniform', activation='relu'))
 
 
 #add output layer
-classifier.add(Dense(output_dim = 3, init='uniform', activation='sigmoid'))
+classifier.add(Dense(output_dim = 3, init='uniform', activation='softmax'))
 
 #compiling the ANN
 classifier.compile(optimizer = "adam", loss= 'binary_crossentropy', metrics= ['accuracy'])
@@ -84,7 +86,7 @@ def processSingleWordTests(word):
 
         
 
-new_pred = classifier.predict(processSingleWordTests("and"))
+new_pred = classifier.predict(processSingleWordTests("esternocleidooccipitomastoideo"))
 new_pred = (new_pred > 0.5)
 
 
