@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+import string
+
 np.random.seed(10)
 
 remove_n = 10
@@ -11,8 +13,10 @@ for fileName in fileNames:
     length = 0
     for line in f:
         length += 1
-        if length == 100000:
+        if length > 60000:
             break
+        printable = set(string.printable)
+        filter(lambda x: x in printable, line)
         keys.append(line.replace("\n", ""))
         values.append(fileName.replace(".txt", ""))
 output_dict = dict(zip(keys, values))
@@ -31,6 +35,5 @@ for key in output_dict.keys():
     word = output_dict[key]
     row = word + "," + " ".join(str(x) for x in list(lang)).replace(" ", ",") + "\n"
     csv.write(row)
-df_subset = pd.read_csv('lang_data.csv')
-df_subset.to_csv('lang_data.csv', sep=',', encoding='utf-8')
+
 

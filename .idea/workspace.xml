@@ -4,7 +4,6 @@
     <list default="true" id="fac6b1c4-b79e-48fb-9daf-554a8d704986" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/ann.py" afterPath="$PROJECT_DIR$/ann.py" />
       <change beforePath="$PROJECT_DIR$/dataMaker.py" afterPath="$PROJECT_DIR$/dataMaker.py" />
-      <change beforePath="$PROJECT_DIR$/english.txt" afterPath="$PROJECT_DIR$/english.txt" />
       <change beforePath="$PROJECT_DIR$/lang_data.csv" afterPath="$PROJECT_DIR$/lang_data.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="675">
-      <file leaf-file-name="dataMaker.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dataMaker.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dataMaker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="495">
+              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -31,8 +30,8 @@
       <file leaf-file-name="lang_data.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lang_data.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-96580">
-              <caret line="35498" column="73" lean-forward="false" selection-start-line="35498" selection-start-column="73" selection-end-line="35498" selection-end-column="73" />
+            <state relative-caret-position="662">
+              <caret line="695550" column="0" lean-forward="false" selection-start-line="695550" selection-start-column="0" selection-end-line="695550" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="espanol.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="espanol.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/espanol.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="891">
-              <caret line="27" column="7" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="7" />
+            <state relative-caret-position="429">
+              <caret line="178" column="8" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -84,8 +83,8 @@
       <list>
         <option value="$PROJECT_DIR$/norsk.txt" />
         <option value="$PROJECT_DIR$/lang_data.csv" />
-        <option value="$PROJECT_DIR$/dataMaker.py" />
         <option value="$PROJECT_DIR$/english.txt" />
+        <option value="$PROJECT_DIR$/dataMaker.py" />
       </list>
     </option>
   </component>
@@ -96,8 +95,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="109" />
-    <option name="y" value="189" />
+    <option name="x" value="213" />
+    <option name="y" value="48" />
     <option name="width" value="3507" />
     <option name="height" value="2025" />
   </component>
@@ -168,7 +167,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="109" y="189" width="3507" height="2025" extended-state="0" />
+    <frame x="213" y="48" width="3507" height="2025" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -176,7 +175,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982844" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39244187" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3866279" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36837482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -436,24 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lang_data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96580">
-          <caret line="35498" column="73" lean-forward="false" selection-start-line="35498" selection-start-column="73" selection-end-line="35498" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataMaker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/english.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -464,9 +445,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/espanol.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="27" column="7" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="7" />
+        <state relative-caret-position="429">
+          <caret line="178" column="8" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lang_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="695550" column="0" lean-forward="false" selection-start-line="695550" selection-start-column="0" selection-end-line="695550" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataMaker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

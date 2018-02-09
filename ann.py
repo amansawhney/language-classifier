@@ -19,14 +19,14 @@ from keras.utils import to_categorical
 
 # Importing the dataset
 dataset = pd.read_csv('/home/amansawhney/Development/language-classifier/lang_data.csv')
-dataset = dataset.fillna(value = " ")
+dataset = dataset.fillna(value = " ").sample(frac=1)
 X_p = dataset.iloc[:, 2:].values
 X = []
 for i in X_p:
     row = []
     for j in i:
         if len(j) > 1:
-            print(i)
+            j = " "
         row.append(ord(str(j)))
     X.append(row)
 X = np.array(X)
@@ -62,15 +62,15 @@ classifier.add(Dense(output_dim = 40, init='uniform', activation='relu'))
 
 
 #add output layer
-classifier.add(Dense(output_dim = 3, init='uniform', activation='softmax'))
+classifier.add(Dense(output_dim = 5, init='uniform', activation='softmax'))
 
 #compiling the ANN
 classifier.compile(optimizer = "adam", loss= 'binary_crossentropy', metrics= ['accuracy'])
 
 # Fitting classif. 1ier to the Training set
-classifier.fit(X_train, y_train, batch_size = 100, nb_epoch=100)
+classifier.fit(X_train, y_train, batch_size = 1000, nb_epoch=20)
 
-score = classifier.evaluate(X_test, y_test, batch_size=1)
+score = classifier.evaluate(X_test, y_test, batch_size=1000)
 
 y_pred = classifier.predict(X_test)
 y_pred = (y_pred > 0.5)
@@ -82,10 +82,10 @@ def processSingleWordTests(word):
         word_array.append(" ")
     for i in word_array:
         encoded_array[0].append(ord(i))
-    return np.array(encoded_array)
+    return sc.transform(np.array(encoded_array))
 
         
-word = processSingleWordTests("hønsehuset")
+word = processSingleWordTests("activation")
 new_pred = classifier.predict(word)
 new_pred = (new_pred > 0.5)
 
